@@ -38,6 +38,7 @@ module.exports.saveMovie = (req, res, next) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
         throw new InvalidDataError('Переданы некорректные данные при сохранении фильма');
       }
+      throw err;
     })
     .catch(next);
 };
@@ -64,6 +65,7 @@ module.exports.deleteMovieById = (req, res, next) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
         throw new InvalidDataError('Переданы некорректные данные для удаления фильма');
       }
+      throw err;
     })
     .catch(next);
 };

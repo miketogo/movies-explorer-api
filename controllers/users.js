@@ -35,6 +35,7 @@ module.exports.createUser = (req, res, next) => {
       if (err.name === 'ValidationError') {
         throw new InvalidDataError('Переданы некорректные данные при создании пользователя');
       }
+      throw err;
     })
     .catch(next);
 };
@@ -49,6 +50,7 @@ module.exports.getCurrentUser = (req, res, next) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
         throw new InvalidDataError('Переданы некорректные данные при поиске пользователя по id');
       }
+      throw err;
     })
     .catch(next);
 };
@@ -64,6 +66,7 @@ module.exports.updateUser = (req, res, next) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
         throw new InvalidDataError('Переданы некорректные данные при обновлении профиля');
       }
+      throw err;
     })
     .catch(next);
 };
