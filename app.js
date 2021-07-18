@@ -18,8 +18,8 @@ const { NODE_ENV, DB_LINK } = process.env;
 const { PORT = 3000 } = process.env;
 
 const CORS_WHITELIST = [
-  'https://movies.surikov.nomoredomains.club/',
-  'http://movies.surikov.nomoredomains.club/',
+  'https://movies.surikov.nomoredomains.club',
+  'http://movies.surikov.nomoredomains.club',
   'http://localhost:3000',
   'https://localhost:3000',
 ];
